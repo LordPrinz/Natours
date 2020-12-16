@@ -1,4 +1,4 @@
 # Natours
 
 ## Opis
-My website
+Pure CSS and HTML website.
