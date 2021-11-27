@@ -1,0 +1,97 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    @supports(backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    }
+    &__content {
+        @include respond(tab-port) {
+            padding: 5rem 2rem;
+        }
+        @include absCenter;
+        max-width: 1900px;
+        width: 75%;
+        background-color: $color-white;
+        border-radius: 5px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .4s .2s;
+        transform: translate(-50%, -50%) scale(.25);
+        text-align: center;
+    }
+    &__left {
+        width: 33.33333333%;
+        display: table-cell;
+        @include respond(tab-port) {
+            width: 0;
+            display: inline;
+        }
+    }
+    &__right {
+        width: 66.66666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+        @include respond(tab-port) {
+            width: 0;
+            display: inline;
+        }
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        @include respond(tab-port) {
+            display: inline-block;
+            width: 10rem;
+            max-height: 53px;
+            margin-bottom: 30px;
+            float: left;
+            margin-right: 10px;
+            visibility: hidden;
+        }
+    }
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light;
+        hyphens: auto;
+    }
+}
