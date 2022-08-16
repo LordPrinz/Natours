@@ -44,7 +44,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com).
 # Clone this repository
 $ git clone https://github.com/LordPrinz/Natours
 # Go to the cloned repository
-$ cd DragDrop
+$ cd Natours
 # Run the website
 $ start index.html
 ```
