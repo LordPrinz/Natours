@@ -33,6 +33,7 @@ This was created using **ONLY** `HTML` and `SCSS`.
 - RWD
 - Two side cards
 - Animations
+- Float layout
 
 ## How To Use
 
